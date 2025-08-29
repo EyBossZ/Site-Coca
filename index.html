@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quem compra a Coca hoje?</title>
+  <meta name="color-scheme" content="dark light">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥤</text></svg>">
+</head>
+<body>
+  <div class="header-buttons">
+    <button class="header-btn" id="settingsBtn" title="Configurações">⚙️</button>
+    <button class="header-btn" id="chatBtn" title="Chat">💬</button>
+    <a href="/admin.html" class="header-btn" title="Painel Admin">🔑</a>
+  </div>
+
+  <div class="container">
+    <div class="logo-container">
+      <img src="" alt="Bebida em Dia Logo" class="main-logo">
+    </div>
+
+    <p class="fun-message" id="funMessage"></p>
+
+    <div class="main-grid">
+      <section class="panel who-today" id="todayPanel">
+        <p class="panel-subtitle">Responsável de Hoje</p>
+        <div class="who" id="todayCard">
+          <div class="name" id="todayName">—</div>
+          <div class="date" id="todayDate">—</div>
+          <div class="actions">
+            <button class="btn primary" id="togglePaidBtn">Marcar como Pago</button>
+          </div>
+        </div>
+        <div class="alert" id="todayAlert">Hoje não é dia de compra.</div>
+        
+        <div id="reactionArea" class="reaction-area hidden">
+            <p>Reagiram:</p>
+            <div id="reactions"></div>
+            <div class="emoji-buttons">
+                <button class="emoji-btn" data-emoji="👍">👍</button>
+                <button class="emoji-btn" data-emoji="❤️">❤️</button>
+                <button class="emoji-btn" data-emoji="🥤">🥤</button>
+            </div>
+        </div>
+      </section>
+      
+      <section class="panel">
+        <p class="panel-subtitle">Últimas Compras</p>
+        <div class="list" id="historyList">
+            <p class="empty-state">Nenhum registro encontrado.</p>
+        </div>
+      </section>
+      
+      <section class="panel">
+        <p class="panel-subtitle">Próximas Compras</p>
+        <div class="list" id="futureList">
+            <p class="empty-state">Calculando...</p>
+        </div>
+      </section>
+
+      <section class="panel" id="rankingPanel">
+  <p class="panel-subtitle">Ranking de Quem Mais Comprou</p>
+  <div class="list" id="rankingList">
+    <p class="empty-state">Carregando ranking...</p>
+  </div>
+  
+</section>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="settingsModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Configurações</h3>
+        <button class="btn close-btn" id="closeSettingsModal">&times;</button>
+      </div>
+      
+      <p class="modal-desc">O tema escolhido fica salvo no seu navegador.</p>
+      <div class="theme-buttons">
+        <button class="btn" data-theme="dark">Escuro</button>
+        <button class="btn" data-theme="light">Claro</button>
+        <button class="btn" data-theme="retro">Retro</button>
+        <button class="btn" data-theme="dracula">Drácula</button>
+        <button class="btn" data-theme="monokai">Monokai</button>
+        <button class="btn" data-theme="forest">Floresta</button>
+        <button class="btn" data-theme="synthwave">Synthwave</button>
+        <button class="btn" data-theme="nord">Nord</button>
+      </div>
+
+      <hr style="border: 1px solid var(--border); margin: 1rem 0;">
+
+      <p class="modal-desc">Defina um fundo personalizado por URL.</p>
+      <div class="input-group">
+        <input type="text" id="backgroundInput" class="form-input" placeholder="URL da imagem (ex: https://...)">
+        <button id="applyBackgroundBtn" class="btn primary">Aplicar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="chatModal">
+    <div class="modal chat-modal">
+        <div class="modal-header">
+            <h3 id="chatHeaderTitle">Chat da Galera</h3>
+            <button class="btn close-btn" id="closeChatModal">&times;</button>
+        </div>
+        <div id="nameInputContainer" class="chat-flow">
+            <h4>Qual o seu nome?</h4>
+            <input type="text" id="nameInput" class="form-input" placeholder="Digite seu nome para entrar...">
+            <button id="enterChatBtn" class="btn primary">Entrar no Chat</button>
+        </div>
+        <div id="chatContent" class="hidden chat-flow">
+            <div id="chatMessages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="messageInput" class="form-input" placeholder="Digite sua mensagem...">
+                <button id="sendBtn" class="btn primary">Enviar</button>
+            </div>
+            <p id="userIdDisplay"></p>
+        </div>
+    </div>
+  </div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "people": [
+    "Matheus",
+    "Ana Beatriz",
+    "Maria Carolina",
+    "Lais Dias"
+  ],
+  "paidDates": {
+    "2025-08-19": "Ana Beatriz",
+    "2025-08-21": "Matheus",
+    "2025-08-25": "Lais Dias",
+    "2025-08-27": "Ana Beatriz"
+  },
+  "chat": [
+    {
+      "userName": "Matheus",
+      "text": "Teste",
+      "timestamp": "2025-08-23T23:22:26.759Z"
+    },
+    {
+      "userName": "Bia",
+      "text": "Ooi",
+      "timestamp": "2025-08-23T23:49:49.952Z"
+    },
+    {
+      "userName": "Marymoon",
+      "text": "oioi",
+      "timestamp": "2025-08-23T23:50:31.902Z"
+    },
+    {
+      "userName": "Bia",
+      "text": ":)",
+      "timestamp": "2025-08-24T02:00:31.744Z"
+    }
+  ]
+}
